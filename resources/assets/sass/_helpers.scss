@@ -1,0 +1,110 @@
+
+/* Margin/Padding loop */
+
+$spaceamounts: (0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 60, 70, 75, 80, 90, 100, 110, 120, 130, 140, 150, 160); // Adjust this to include the pixel amounts you need.
+$sides: (top, bottom, left, right); // Leave this variable alone
+
+@each $space in $spaceamounts {
+    @each $side in $sides {
+        .m-#{str-slice($side, 0, 1)}-#{$space} {
+            margin-#{$side}: #{$space}px !important;
+        }
+
+        .p-#{str-slice($side, 0, 1)}-#{$space} {
+            padding-#{$side}: #{$space}px !important;
+        }
+
+        .pv-#{str-slice($side, 0, 1)}-#{$space} {
+            padding-#{$side}: #{$space}vh !important;
+        }
+    }
+}
+
+.drop-shadow {
+    box-shadow: 5px 10px 8px #888888;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.toast-top-center {
+    top: 50px !important;
+}
+
+.navbar .navbar-brand {
+    height: auto;
+}
+
+.navbar .navbar-nav>li>a {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: auto;
+}
+
+.lbl {
+    position: relative;
+    display: block;
+    height: 20px;
+    width: 44px;
+    background: $ltgray;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.lbl:after {
+    position: absolute;
+    left: -2px;
+    top: -3px;
+    display: block;
+    width: 26px;
+    height: 26px;
+    border-radius: 100px;
+    background: $nv_silver;
+    box-shadow: 0px 3px 3px rgba(0,0,0,0.05);
+    content: '';
+    transition: all 0.3s ease;
+}
+.lbl:active:after {
+    transform: scale(1.15, 0.85);
+}
+.cbx:checked ~ label {
+    background: #6fbeb5;
+}
+.cbx:checked ~ label:after {
+    left: 20px;
+    background: #179588;
+}
+.cbx:disabled ~ label {
+    background: #d5d5d5;
+    pointer-events: none;
+}
+.cbx:disabled ~ label:after {
+    background: $offwhite;
+}
+.cntr {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.press {
+    margin-bottom: 40px;
+}
+.hidden {
+    display: none;
+}
+
+tr:hover td {
+        background: #c7d4dd !important;
+}
+
+.eticket-in-process {
+    background-color: orange;
+}

@@ -1,0 +1,110 @@
+
+// Sections
+
+/* Avatar Information *******************/
+.inset {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	box-shadow:
+		inset 0 0 0 2px rgba(255,255,255,0.6),
+		0 1px 1px rgba(0,0,0,0.1);
+	background-color: transparent !important;
+	z-index: 999;
+}
+
+.inset img {
+	border-radius: inherit;
+	width: inherit;
+	height: inherit;
+	display: block;
+	position: relative;
+	z-index: 998;
+}
+
+/* Snackbar Information *******************/
+#snackbar {
+	visibility:    hidden;
+	min-width:     250px;
+	margin-left:   -125px;
+	text-align:    center;
+	border-radius: 5px;
+	padding:       16px;
+	position:      fixed;
+	z-index:       1;
+	left:          50%;
+	top:           60px;
+	font-size:     17px;
+}
+
+#snackbar.show {
+	visibility: visible;
+	-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+	animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+	from {top: 0; opacity: 0;}
+	to {top: 60px; opacity: 1;}
+}
+
+@keyframes fadein {
+	from {top: 0; opacity: 0;}
+	to {top: 60px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+	from {top: 60px; opacity: 1;}
+	to {top: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+	from {top: 60px; opacity: 1;}
+	to {top: 0; opacity: 0;}
+}
+
+/* Calendar Information *******************/
+#calendar {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.fc-view, .fc-view>table {
+	z-index: 0;
+}
+
+/* List Information *******************/
+#resize_wrapper {
+	position: absolute;
+	top: 8em;
+	left: 1em;
+	right: 1em;
+	bottom: 1em;
+}
+
+tr.group, tr.group:hover {
+	background-color: #ddd !important;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+td {
+	position: relative;
+	padding: 5px 10px;
+}
+
+tr.strikeout td:before {
+	content: " ";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	border-bottom: 1px solid #111;
+	width: 100%;
+}
+
+tr.strikeout td {
+	color: #ffcccc;
+	font-style: italic;
+}
